@@ -19,4 +19,8 @@ public class AdminController {
     public String user(){
         return "admin/user/user";
     }
+    @GetMapping("/product")
+    public String product(){
+        return "admin/product/product";
+    }
 }
