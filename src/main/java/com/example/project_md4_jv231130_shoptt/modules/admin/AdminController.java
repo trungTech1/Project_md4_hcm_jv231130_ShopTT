@@ -23,4 +23,8 @@ public class AdminController {
     public String product(){
         return "admin/product/product";
     }
+    @GetMapping("/category")
+    public String category(){
+        return "admin/category/category";
+    }
 }
