@@ -1,9 +1,11 @@
-package com.example.project_md4_jv231130_shoptt.config;
+package com.example.config;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-import org.springframework.context.annotation.*;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -54,6 +56,13 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware {
         return viewResolver;
     }
 
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        System.out.println("addInterceptors");
+        registry.addInterceptor(new AuthInterceptor()).addPathPatterns("/admin/**","");
+
+    }
+
     // cấu hình file upload
     @Bean(name = "multipartResolver")
     public CommonsMultipartResolver getResolver()  {
@@ -69,5 +78,6 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware {
                 .addResourceLocations("/uploads/","/access/admin/css/","/access/admin/js/","/access/admin/img/",
                         "/access/customer/css/","/access/customer/js/","/access/customer/img/","/access/customer/scss/","/access/login/cssLogin/","/access/login/jsLogin/");
     }
+
 
 }

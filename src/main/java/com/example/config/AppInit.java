@@ -10,13 +10,13 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     @Override
     protected Class<?>[] getRootConfigClasses() {
         // cấu hình ko liên đến web
-        return new Class[]{};
+        return new Class[]{HibernateConfig.class};
     }
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
         // liene quan tới web
-        return new Class[]{MVCConfig.class};
+        return new Class[]{WebConfig.class};
     }
 
     @Override
