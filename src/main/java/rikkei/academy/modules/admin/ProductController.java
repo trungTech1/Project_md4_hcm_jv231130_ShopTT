@@ -7,6 +7,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import rikkei.academy.modules.category.Category;
 import rikkei.academy.modules.category.service.ICategoryService;
+import rikkei.academy.modules.products.Product;
 import rikkei.academy.modules.products.dto.request.ProductRequest;
 import rikkei.academy.modules.products.dto.response.ProductResponse;
 import rikkei.academy.modules.products.service.IProductService;
@@ -60,7 +61,7 @@ public class ProductController {
     }
     @GetMapping("product/edit")
     public String editProduct(@RequestParam("id") Integer id, Model model){
-        ProductResponse product = productService.findById(id);
+        Product product = productService.findById(id);
         model.addAttribute("product",product);
         return "admin/product/edit";
     }

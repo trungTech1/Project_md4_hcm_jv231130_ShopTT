@@ -36,8 +36,8 @@ public class ProductServicelmpl implements IProductService {
     }
 
     @Override
-    public ProductResponse findById(Integer id) {
-        return new ProductResponse(productDaolmpl.findById(id));
+    public Product findById(Integer id) {
+        return productDaolmpl.findById(id);
     }
 
     @Override
@@ -107,5 +107,9 @@ public class ProductServicelmpl implements IProductService {
     @Override
     public boolean existByName(String name) {
         return productDaolmpl.existByName(name);
+    }
+    @Override
+    public List<Product> findByCategory(Integer categoryId) {
+        return productDaolmpl.findByCategoryId(categoryId);
     }
 }
