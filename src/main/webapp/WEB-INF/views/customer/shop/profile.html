@@ -69,6 +69,7 @@
             <p><strong>gender:</strong> <span th:text="${customer.gender ? 'Nam' : 'Nu'}"></span></p>
         </div>
     </div>
+<!--    //hien thi user-->
     <div th:if="${customer.avatar != null && !customer.avatar.isEmpty() && customer.customerName != null && !customer.customerName.isEmpty() && customer.address != null && !customer.address.isEmpty() && customer.email != null && !customer.email.isEmpty() && customer.phoneNumber != null && !customer.phoneNumber.isEmpty() && customer.gender != null}">
         <a th:href="|/profile/order|" class="btn">View Order</a>
         <a th:href="|/profile/edit|" class="btn">Edit Profile</a>
