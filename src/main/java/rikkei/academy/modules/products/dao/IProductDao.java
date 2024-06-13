@@ -12,4 +12,5 @@ public interface IProductDao extends IGenericDao<Product,Integer> {
     List<Product> searchByName(String keyword);
     long getTotalsElement();
     boolean existByName(String name);
+    List<Product> findByCategoryId(Integer categoryId);
 }

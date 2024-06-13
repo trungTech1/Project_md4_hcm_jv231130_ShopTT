@@ -15,5 +15,6 @@ public interface ICategoryService extends IGeneric<CategoryRequest,Integer> {
     List<Category> searchByName(String keyword);
     long getTotalsElement();
     boolean existByName(String name);
+
 }
 
